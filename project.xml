@@ -61,10 +61,10 @@
     </developers>
     <shortDescription>todo short description</shortDescription>
     <issueTrackingUrl>http://jira.media-style.com/browse/INGRID</issueTrackingUrl>
-    <siteAddress>http://213.144.28.209/ingrid/ingrid-iplug-admin-step1</siteAddress>
-    <siteDirectory>/srv/www/htdocs/ingrid/ingrid-iplug-admin-step1</siteDirectory>
+    <siteAddress>http://213.144.28.209/ingrid/ingrid-iplug-admin-step1-sns</siteAddress>
+    <siteDirectory>/srv/www/htdocs/ingrid/ingrid-iplug-admin-step1-sns</siteDirectory>
     <repository>
-        <connection>scm:svn:https://127.0.0.1:444/svn/ingrid/ingrid-iplug-admin-step1/trunk</connection>
+        <connection>scm:svn:https://127.0.0.1:444/svn/ingrid/ingrid-iplug-admin-step1-sns/trunk</connection>
     </repository>
     <dependencies>
         <dependency>
