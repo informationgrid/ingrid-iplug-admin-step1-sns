@@ -1,0 +1,3 @@
+body, td {font-family:Arial;font-size:12px}
+.error {color:#ED171F;font-weight:bold}
+div.error {background-color:#FCDEDE; width:400px; align:center; border:1px; border-style:solid;border-color:#ED171F; padding: 20px}
