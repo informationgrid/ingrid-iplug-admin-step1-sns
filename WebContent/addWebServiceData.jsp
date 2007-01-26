@@ -63,7 +63,7 @@
 	    webServiceUrl = (String) description.get("serviceUrl");
 	    usernameValue = (String) description.get("username");
 	    passwordValue = (String) description.get("password");
-	    maxWordAnalyzingString = (String) description.get("maxWordAnalyzing");
+	    maxWordAnalyzing = description.getInt("maxWordAnalyzing");
 	}
 
 	%>	
