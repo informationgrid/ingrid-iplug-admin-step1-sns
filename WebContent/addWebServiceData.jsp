@@ -64,6 +64,7 @@
 	    usernameValue = (String) description.get("username");
 	    passwordValue = (String) description.get("password");
 	    maxWordAnalyzing = description.getInt("maxWordAnalyzing");
+	    maxWordAnalyzingString = Integer.toString(maxWordAnalyzing);
 	}
 
 	%>	
