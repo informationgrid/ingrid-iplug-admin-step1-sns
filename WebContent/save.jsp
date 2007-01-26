@@ -24,6 +24,7 @@ if(url !=null){
 	folder = description.getWorkinDirectory();
 }
 
+description.setIPlugClass("de.ingrid.iplug.sns.SNSPlug");
 File file = new File(folder, "plugdescription.xml");
 XMLSerializer serializer = new XMLSerializer();
 serializer.serialize(description,file);
