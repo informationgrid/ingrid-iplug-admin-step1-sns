@@ -48,7 +48,7 @@
 	        description.put("language", language);
 	        description.put("username", usernameValue);
 	        description.put("password", passwordValue);
-	        description.put("maxWordAnalyzing", maxWordAnalyzingString);
+	        description.putInt("maxWordAnalyzing", maxWordAnalyzing);
 
 	        response.sendRedirect(response.encodeRedirectURL("save.jsp"));
 	    } 
