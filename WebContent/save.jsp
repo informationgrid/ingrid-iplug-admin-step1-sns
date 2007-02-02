@@ -21,7 +21,7 @@ if(url !=null){
 	}
 	folder = new File(path);
 } else {
-	folder = new File(description.getWorkinDirectory(), "conf");
+	folder = description.getWorkinDirectory();
 }
 
 description.setIPlugClass("de.ingrid.iplug.sns.SnsPlug");
