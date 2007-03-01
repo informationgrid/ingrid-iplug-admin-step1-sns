@@ -106,7 +106,7 @@
 							<form method="post" action="<%=response.encodeURL("selectWorkingFolder.jsp")%>">
 								<input type="hidden" name="processed" value="true" />
 								<input type="hidden" name="error" value="fileNotFound" />
-								<input type="checkbox" name="createDir" value="true" <%if(createDir) {%>checked="checked"<%}%>" />
+								<input type="checkbox" name="createDir" value="true" <%if(createDir) {%>checked="checked"<%}%> />
 							</form>
 						</td>
 					</tr>
