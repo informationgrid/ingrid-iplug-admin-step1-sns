@@ -25,9 +25,9 @@ if(url !=null){
 }
 
 description.setIPlugClass("de.ingrid.iplug.sns.SnsPlug");
-File file = new File(folder, "plugdescription.xml");
+File pd_file = (File) application.getAttribute("pd_file");
 XMLSerializer serializer = new XMLSerializer();
-serializer.serialize(description,file);
+serializer.serialize(description,pd_file);
 
 response.sendRedirect(response.encodeRedirectURL("finish.jsp"));
 %>

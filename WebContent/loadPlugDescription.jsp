@@ -7,13 +7,14 @@
 <%
 // get plug description from class path
 PlugDescription description;
-InputStream in = this.getClass().getResourceAsStream("/plugdescription.xml");
-boolean exists = false;
-if(in !=null ){
+File pd_file = (File) application.getAttribute("pd_file");
+
+if(pd_file.exists()){
+	InputStream in = new FileInputStream(pd_file);
+	
 	XMLSerializer serializer = new XMLSerializer();
 	serializer.aliasClass(PlugDescription.class.getName(), PlugDescription.class );
 	description = (PlugDescription)serializer.deSerialize(in);		
-	exists = true;
 } else {
 	description = new PlugDescription();
 }
