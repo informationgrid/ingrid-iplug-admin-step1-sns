@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ include file="timeoutcheck.jsp"%>
 <%
 	//de.ingrid.iplug.web.WebContainer container = (de.ingrid.iplug.web.WebContainer) application.getAttribute("server");
 	//container.logoutUser(request.getUserPrincipal());

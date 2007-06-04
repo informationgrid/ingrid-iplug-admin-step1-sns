@@ -3,7 +3,7 @@
 <%@ page import="de.ingrid.iplug.util.*"%>
 <%@ page import="java.io.*"%>
 <%@ page import="de.ingrid.utils.PlugDescription"%>
-
+<%@ include file="timeoutcheck.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>

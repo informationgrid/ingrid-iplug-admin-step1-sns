@@ -17,7 +17,7 @@
 <%@ page import="java.util.Properties" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="de.ingrid.utils.IDataSourceConnection" %>
-
+<%@ include file="timeoutcheck.jsp"%>
 <%!
 
 public void savePortalProviders(final BusClient busClient, final String busUrl) {

@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <%@ page import="de.ingrid.utils.PlugDescription" %>
 <%@ page import="de.ingrid.iplug.util.*" %>
-
+<%@ include file="timeoutcheck.jsp"%>
 <%
 int busIndex = Integer.parseInt(WebUtil.getParameter(request, "busIndex", "-1"));
 PlugDescription  description = (PlugDescription) request.getSession().getAttribute("description");

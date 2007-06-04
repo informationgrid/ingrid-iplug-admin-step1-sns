@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="de.ingrid.utils.PlugDescription" %>
 <%@ page import="de.ingrid.iplug.util.*" %>
-
+<%@ include file="timeoutcheck.jsp"%>
 <%
 String error = "";
 String iBusUrl = WebUtil.getParameter(request, "iBusUrl", "");

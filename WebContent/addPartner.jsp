@@ -4,7 +4,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.Iterator"%>
-
+<%@ include file="timeoutcheck.jsp"%>
 <%!
 
 public boolean containsPartner(String partnerKey, String[] partners){

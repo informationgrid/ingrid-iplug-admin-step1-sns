@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="de.ingrid.utils.PlugDescription" %>
 <%@ page import="de.ingrid.iplug.util.*" %>
-
+<%@ include file="timeoutcheck.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>

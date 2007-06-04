@@ -3,7 +3,7 @@
 <%@ page import="java.io.*" %>    
 <%@ page import="de.ingrid.utils.xml.*" %>
 <%@ page import="de.ingrid.utils.PlugDescription" %>
-
+<%@ include file="timeoutcheck.jsp"%>
 <%
 // get plug description from class path
 PlugDescription description;
