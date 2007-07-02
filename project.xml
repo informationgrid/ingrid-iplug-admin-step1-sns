@@ -5,7 +5,7 @@
     <artifactId>ingrid-iplug-admin-step1-sns</artifactId>
     <name>ingrid-iplug-admin-step1-sns</name>
     <groupId>ingrid</groupId>
-    <currentVersion>0.1-SNAPSHOT</currentVersion>
+    <currentVersion>1.0.0</currentVersion>
     <inceptionYear>2006</inceptionYear>
     <mailingLists>
         <mailingList>
@@ -64,13 +64,13 @@
     <siteAddress>http://213.144.28.209/ingrid/ingrid-iplug-admin-step1-sns</siteAddress>
     <siteDirectory>/srv/www/htdocs/ingrid/ingrid-iplug-admin-step1-sns</siteDirectory>
     <repository>
-        <connection>scm:svn:https://127.0.0.1:444/svn/ingrid/ingrid-iplug-admin-step1-sns/trunk</connection>
+        <connection>scm:svn:https://127.0.0.1:444/svn/ingrid/ingrid-iplug-admin-step1-sns/branches/ingrid-iplug-admin-step1-sns-1.0.0</connection>
     </repository>
     <dependencies>
         <dependency>
             <groupId>ingrid</groupId>
             <artifactId>ingrid-iplug</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>${pom.currentVersion}</version>
             <url>http://213.144.28.209/ingrid/maven</url>
             <type>jar</type>
             <properties>
@@ -80,7 +80,7 @@
         <dependency>
             <groupId>ingrid</groupId>
             <artifactId>ingrid-utils</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>${pom.currentVersion}</version>
             <url>http://213.144.28.209/ingrid/maven</url>
             <type>jar</type>
             <properties>
@@ -90,7 +90,7 @@
         <dependency>
             <groupId>ingrid</groupId>
             <artifactId>ingrid-ibus</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>${pom.currentVersion}</version>
             <type>jar</type>
             <url>http://213.144.28.209/ingrid/maven</url>
             <properties>
