@@ -70,7 +70,7 @@
     <dependency>
       <groupId>ingrid</groupId>
       <artifactId>ingrid-iplug</artifactId>
-      <version>${pom.currentVersion}</version>
+      <version>1.0.0</version>
       <url>http://213.144.28.209/ingrid/maven</url>
       <type>jar</type>
       <properties>
@@ -80,7 +80,7 @@
     <dependency>
       <groupId>ingrid</groupId>
       <artifactId>ingrid-utils</artifactId>
-      <version>${pom.currentVersion}</version>
+      <version>1.0.0</version>
       <url>http://213.144.28.209/ingrid/maven</url>
       <type>jar</type>
       <properties>
@@ -90,7 +90,7 @@
     <dependency>
       <groupId>ingrid</groupId>
       <artifactId>ingrid-ibus</artifactId>
-      <version>${pom.currentVersion}</version>
+      <version>1.0.0</version>
       <type>jar</type>
       <url>http://213.144.28.209/ingrid/maven</url>
       <properties>
