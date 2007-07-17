@@ -21,7 +21,7 @@
             if(workingDirectory.equals("") && description.getWorkinDirectory()!=null){
             	workingDirectory = description.getWorkinDirectory().getAbsolutePath();
             }
-          	boolean createDir = WebUtil.getParameter(request, "createDir", null) != null;
+          	boolean createDir = WebUtil.getParameter(request, "createDir", null) == null;
         
             if (!workingDirectory.equals("") && process) {
           
