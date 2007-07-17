@@ -5,7 +5,7 @@
   <artifactId>ingrid-iplug-admin-step1-sns</artifactId>
   <name>ingrid-iplug-admin-step1-sns</name>
   <groupId>ingrid</groupId>
-  <currentVersion>1.0.0</currentVersion>
+  <currentVersion>1.0.1</currentVersion>
   <inceptionYear>2006</inceptionYear>
   <mailingLists>
     <mailingList>
@@ -130,6 +130,11 @@
       <id>1.0.0</id>
       <name>1.0.0</name>
       <tag>1.0.0</tag>
+    </version>
+    <version>
+      <id>1.0.1</id>
+      <name>1.0.1</name>
+      <tag>1.0.1</tag>
     </version>
   </versions>
 </project>
