@@ -28,7 +28,7 @@ description.setIPlugClass("de.ingrid.iplug.sns.SnsPlug");
 File pd_file = (File) application.getAttribute("pd_file");
 XMLSerializer serializer = new XMLSerializer();
 if (null == description) {
-	System.out.println("ERROR: current values lost during session timeout, plugdescription was <null>")
+	System.out.println("ERROR: current values lost during session timeout, plugdescription was <null>");
 } else {
     serializer.serialize(description,pd_file);
 }
