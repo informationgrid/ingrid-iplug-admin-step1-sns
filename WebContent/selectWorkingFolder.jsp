@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="de.ingrid.iplug.util.*"%>
 <%@ page import="java.io.*"%>
 <%@ page import="de.ingrid.utils.PlugDescription"%>
@@ -21,10 +20,9 @@
             if(workingDirectory.equals("") && description.getWorkinDirectory()!=null){
             	workingDirectory = description.getWorkinDirectory().getAbsolutePath();
             }
-          	boolean createDir = WebUtil.getParameter(request, "createDir", null) == null;
+          	boolean createDir = WebUtil.getParameter(request, "createDir", null) != null;
         
             if (!workingDirectory.equals("") && process) {
-          
                 File file = new File(workingDirectory);
                 if (!file.exists() && !createDir) {
                     error = "Der angegegebene Ordner existiert nicht.";
@@ -42,14 +40,13 @@
                     return;
                 }
             }
-
-            %>
-		<center>
-		<form method="post" action="<%=response.encodeURL("selectWorkingFolder.jsp")%>">
-		<input type="hidden" name="processed" value="true" />
-		<input type="hidden" name="error" value="fileNotFound" />
+          %>
+	<form method="post" action="<%=response.encodeURL("selectWorkingFolder.jsp")%>">
+			<input type="hidden" name="processed" value="true" />
+			<input type="hidden" name="error" value="fileNotFound" />
+ 		<center>
 			<div class="headline"><br />
-				Arbeitsverzeichnis w&#x00E4;hlen
+				Arbeitsverzeichnis w&#x00e4;hlen
 				<br /><br />
 				<span class="byline">Bitte geben Sie den Pfad zum Ordner an, in dem der Index abgelegt werden soll.</span>
 			</div>
@@ -68,18 +65,17 @@
 				</td>
 				</tr>
 			</table>
--->	   			
+-->	
 			<%if (!error.equals("")) {
 
                 %>
 			<div class="error">
 				<%=error%>
 			</div>
-			<br />
 			<%}
 
             %>
-         
+ 
 				<table class="table" width="400" align="center">
 					<tr>
 						<td colspan="2" class="tablehead">
@@ -91,11 +87,7 @@
 							Pfad:
 						</td>
 						<td class="tablecell">
-							<form method="post" action="<%=response.encodeURL("selectWorkingFolder.jsp")%>">
-								<input type="hidden" name="processed" value="true" />
-								<input type="hidden" name="error" value="fileNotFound" />
 								<input type="text" name="workingDirectory" value="<%=workingDirectory%>" style="width:100%" />
-							</form>					
 						</td>
 					</tr>
 					<tr>
@@ -103,11 +95,7 @@
 							Bei Bedarf erzeugen:
 						</td>
 						<td class="tablecell">
-							<form method="post" action="<%=response.encodeURL("selectWorkingFolder.jsp")%>">
-								<input type="hidden" name="processed" value="true" />
-								<input type="hidden" name="error" value="fileNotFound" />
 								<input type="checkbox" name="createDir" value="true" <%if(createDir) {%>checked="checked"<%}%> />
-							</form>
 						</td>
 					</tr>
 				</table>
@@ -115,18 +103,18 @@
 				<table class="table" align="center">
 				<tr align="center">
 						<td>
-								<input type="button" name="back" value="Zur&#x00FC;ck" onclick="history.back()"/>
+							<input type="button" name="back" value="Zur&#x00FC;ck" onclick="history.back()"/>
 						</td>
 						<td>
-								<input type="button" name="cancel" value="Abbrechen" onclick="window.location.href='<%=response.encodeURL("../step1/index.jsp")%>'"/>						
+							<input type="button" name="cancel" value="Abbrechen" onclick="window.location.href='<%=response.encodeURL("../step1/index.jsp")%>'"/>						
 						</td>
 						<td>
-								<input type="submit" value="Weiter" />
+							<input type="submit" value="Weiter" />
 						</td>
 					</tr>
 				</table>
-			</form>
 		</center>
+		</form>
 	</body>
-<!-- ingrid-iplug-admin-step1-webservice -->
+<!-- ingrid-iplug-admin-step1 -->
 </html>
