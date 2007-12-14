@@ -201,6 +201,12 @@ if (!WebUtil.getParameter(request, "organisationAbbr", "").equals("")
 	description.addField("t2");
 	description.addField("eventtype");
 	description.addField("filter");
+	description.addField("sns_request_type");
+	description.addField("expired");
+	description.addField("association");
+	description.addField("depth");
+	description.addField("direction");
+	description.addField("includeSiblings");
 
 	response.sendRedirect(response.encodeRedirectURL("addPartner.jsp"));
 }
