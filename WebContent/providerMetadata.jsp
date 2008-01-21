@@ -20,11 +20,9 @@
 <%@ include file="timeoutcheck.jsp"%>
 <%!
 
-public void savePortalProviders(final BusClient busClient, final String busUrl) {
+public void savePortalProviders(final BusClient busClient) {
     try {
-    	BusClient client = BusClient.instance();
-    	client.setBusUrl(busUrl);
-    	IBus bus = client.getBus();
+    	IBus bus = busClient.getBus();
 
     	final String query = "datatype:management management_request_type:2";
 		IngridQuery ingridQuery = QueryStringParser.parse(query);
@@ -120,13 +118,10 @@ String iplugAdminGuiPassword = "";
 String proxyServiceUrl = "/kug-group:<eindeutiger IPlug Name>";
 String error = "";
 
-String[] busses = description.getBusUrls();
-if (busses.length > 0) {
-	WebContainer server = (WebContainer) application.getAttribute("server");
-	savePortalProviders(server.getBusClient(), busses[0]);
-	CategorizedKeys.clear();
-}
-CategorizedKeys keys = CategorizedKeys.get("/provider.properties");
+WebContainer server = (WebContainer) application.getAttribute("server");
+savePortalProviders(server.getBusClient());
+CategorizedKeys.clear();
+CategorizedKeys keys = CategorizedKeys.get("/provider.properties", this.getClass().getClassLoader().getResource("/provider.properties").openStream());
 
 // nothing to load; first setup
 if (submitted) {
