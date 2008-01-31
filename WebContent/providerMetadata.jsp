@@ -17,6 +17,10 @@
 <%@ page import="java.util.Properties" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="de.ingrid.utils.IDataSourceConnection" %>
+<%@ page import="de.ingrid.utils.datatype.IDataTypeProvider" %>
+<%@ page import="de.ingrid.utils.datatype.DataType" %>
+<%@ page import="de.ingrid.utils.BeanFactory" %>
+
 <%@ include file="timeoutcheck.jsp"%>
 <%!
 
@@ -112,14 +116,14 @@ String personMail = "";
 String dataSourceName = "";
 String dataSourceDescription = "";
 String iplugAdminGuiUrl = "";
-String datatype = "";
 String iplugAdminGuiPort = "8082";
 String iplugAdminGuiPassword = "";
 String proxyServiceUrl = "/kug-group:<eindeutiger IPlug Name>";
 String error = "";
 
-WebContainer server = (WebContainer) application.getAttribute("server");
-savePortalProviders(server.getBusClient());
+BeanFactory beanFactory = (BeanFactory) application.getAttribute("beanFactory");
+BusClient busClient = (BusClient) beanFactory.getBean("busClient");
+savePortalProviders(busClient);
 CategorizedKeys.clear();
 CategorizedKeys keys = CategorizedKeys.get("/provider.properties", this.getClass().getClassLoader().getResource("/provider.properties").openStream());
 
@@ -133,7 +137,6 @@ if (submitted) {
 	personMail = WebUtil.getParameter(request, "personMail", "");
 	dataSourceName = WebUtil.getParameter(request, "dataSourceName", "");
 	dataSourceDescription = WebUtil.getParameter(request, "dataSourceDescription", "");
-	datatype = WebUtil.getParameter(request, "datatype", "");
 	iplugAdminGuiUrl = WebUtil.getParameter(request, "iplugAdminGuiUrl", "");
 	iplugAdminGuiPort = WebUtil.getParameter(request, "iplugAdminGuiPort", "8082");
 	iplugAdminGuiPassword = WebUtil.getParameter(request, "iplugAdminGuiPassword", "");
@@ -149,7 +152,6 @@ if (submitted) {
 	personPhone = description.getPersonPhone();
 	personMail = description.getPersonMail();
 	dataSourceName = description.getDataSourceName();
-	datatype = "sns";
 	dataSourceDescription = description.getDataSourceDescription();
 	iplugAdminGuiUrl = description.getIplugAdminGuiUrl();
 	iplugAdminGuiPort = String.valueOf(description.getIplugAdminGuiPort());
@@ -185,7 +187,14 @@ if (!WebUtil.getParameter(request, "organisationAbbr", "").equals("")
 	description.remove("ranking");
 	description.setRankinTypes(false, false, true);
 	description.remove("dataType"); // removing old datatypes.
-	description.addDataType("sns");
+	IDataTypeProvider datatypeProvider = (IDataTypeProvider) beanFactory.getBean("dataTypeProvider");
+	DataType[] datatypes = datatypeProvider.getDataTypes();
+	for(int i=0; i<datatypes.length; i++) {
+		DataType datatype = datatypes[i];
+		description.addDataType(datatype.getName());
+	}
+	
+	description.setIPlugClass("de.ingrid.iplug.sns.SnsPlug");
 	description.setIplugAdminGuiUrl(iplugAdminGuiUrl);
 	description.setIplugAdminPassword(iplugAdminGuiPassword.trim());
 	description.setIplugAdminGuiPort(Integer.parseInt(iplugAdminGuiPort));

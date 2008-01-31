@@ -4,6 +4,8 @@
 <%@ page import="de.ingrid.iplug.*"%>
 <%@ page import="java.io.*"%>
 <%@ page import="de.ingrid.utils.PlugDescription"%>
+<%@ page import="de.ingrid.utils.BeanFactory"%>
+
 <%@ include file="timeoutcheck.jsp"%>
 <%
 PlugDescription  description = (PlugDescription) request.getSession().getAttribute("description");
@@ -24,8 +26,8 @@ if(url !=null){
 	folder = description.getWorkinDirectory();
 }
 
-description.setIPlugClass("de.ingrid.iplug.sns.SnsPlug");
-File pd_file = (File) application.getAttribute("pd_file");
+BeanFactory beanFactory = (BeanFactory) application.getAttribute("beanFactory");
+File pd_file = (File) beanFactory.getBean("pd_file");
 XMLSerializer serializer = new XMLSerializer();
 if (null == description) {
 	System.out.println("ERROR: current values lost during session timeout, plugdescription was <null>");

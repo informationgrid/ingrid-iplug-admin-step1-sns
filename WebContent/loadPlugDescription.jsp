@@ -3,11 +3,13 @@
 <%@ page import="java.io.*" %>    
 <%@ page import="de.ingrid.utils.xml.*" %>
 <%@ page import="de.ingrid.utils.PlugDescription" %>
+<%@ page import="de.ingrid.utils.BeanFactory"%>
 <%@ include file="timeoutcheck.jsp"%>
 <%
 // get plug description from class path
 PlugDescription description;
-File pd_file = (File) application.getAttribute("pd_file");
+BeanFactory beanFactory = (BeanFactory) application.getAttribute("beanFactory");
+File pd_file = (File) beanFactory.getBean("pd_file");
 
 if(pd_file.exists()){
 	InputStream in = new FileInputStream(pd_file);

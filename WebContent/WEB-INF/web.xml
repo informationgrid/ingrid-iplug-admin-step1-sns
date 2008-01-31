@@ -9,6 +9,28 @@
         <welcome-file>default.htm</welcome-file>
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
+    
+    <listener>
+        <listener-class>
+                de.ingrid.iplug.web.BeanFactoryContextListener
+        </listener-class>
+    </listener>
+    <listener>
+        <listener-class>
+                de.ingrid.iplug.web.PlugdescriptionContextListener
+        </listener-class>
+    </listener>
+ 	<listener>
+        <listener-class>
+                de.ingrid.iplug.web.DatatypeContextListener
+        </listener-class>
+    </listener>
+    <listener>
+        <listener-class>
+                de.ingrid.iplug.web.BusClientContextListener
+        </listener-class>
+    </listener>
+    
    	<error-page>
 		<error-code>400</error-code>
 		<location>/WEB-INF/400.jsp</location>
