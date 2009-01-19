@@ -212,13 +212,6 @@ if (!WebUtil.getParameter(request, "organisationAbbr", "").equals("")
 	description.addField("direction");
 	description.addField("includeSiblings");
 
-	//add metadata injectors
-	List list = new ArrayList();
-	list.add(de.ingrid.utils.metadata.DefaultMetadataInjector.class.getName());
-	list.add(de.ingrid.utils.metadata.DefaultIPlugOperatorInjector.class.getName());
-	description.put(de.ingrid.utils.PlugDescription.METADATA_INJECTORS, list);	
-
-	
 	response.sendRedirect(response.encodeRedirectURL("addPartner.jsp"));
 }
 %>
