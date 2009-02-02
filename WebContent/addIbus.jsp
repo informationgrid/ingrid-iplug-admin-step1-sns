@@ -20,7 +20,7 @@ if(action.equals("save")){
 	if(description.getBusUrls().length < 1){
 		error = "noIbusAdded";
 	}else{
-		response.sendRedirect(response.encodeRedirectURL("addWebServiceData.jsp"));
+		response.sendRedirect(response.encodeRedirectURL("addFieldQuery.jsp"));
 	}
 }
 %>
