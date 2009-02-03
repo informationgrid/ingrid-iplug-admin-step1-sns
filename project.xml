@@ -89,7 +89,7 @@
         </dependency>
         <dependency>
             <groupId>ingrid</groupId>
-            <artifactId>ingrid-ibus</artifactId>
+            <artifactId>ingrid-ibus-client</artifactId>
             <version>1.2-SNAPSHOT</version>
             <type>jar</type>
             <url>http://213.144.28.209/ingrid/maven</url>
