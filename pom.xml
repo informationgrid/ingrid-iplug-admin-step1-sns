@@ -2,7 +2,7 @@
   <parent>
     <artifactId>ingrid-base-pom</artifactId>
     <groupId>de.ingrid</groupId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.ingrid</groupId>
@@ -26,10 +26,6 @@
         <exclusion>
           <groupId>commons-el</groupId>
           <artifactId>commons-el</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>axis</groupId>
-          <artifactId>axis</artifactId>
         </exclusion>
         <exclusion>
           <groupId>log4j</groupId>
@@ -118,14 +114,6 @@
         <exclusion>
           <groupId>net.sf.ehcache</groupId>
           <artifactId>ehcache</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>axis</groupId>
-          <artifactId>axis-jaxrpc</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>axis</groupId>
-          <artifactId>axis-saaj</artifactId>
         </exclusion>
         <exclusion>
           <groupId>de.ingrid</groupId>
