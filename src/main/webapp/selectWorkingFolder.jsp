@@ -48,7 +48,7 @@
 			<div class="headline"><br />
 				Arbeitsverzeichnis w&#x00e4;hlen
 				<br /><br />
-				<span class="byline">Bitte geben Sie den Pfad zum Ordner an, in dem der Index abgelegt werden soll.</span>
+				<span class="byline">Bitte geben Sie den Pfad zum iPlug Arbeitsverzeichnis an.</span>
 			</div>
 			<br />
 <!-- 

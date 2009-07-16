@@ -37,7 +37,7 @@ if(action.equals("save")){
 		Verf&#x00FC;gbarkeit der Ergebnisse
 		<br />
 		<br />
-		<span class="byline">Geben Sie hier die URL eines iBusses an, dem Sie das Durchsuchen Ihrer Daten erlauben wollen. Sie k&#x00F6;nnen Ihre Datenquelle auch an mehrere iBusse anschlie&#x00DF;en.</span>		
+		<span class="byline">Geben Sie hier die URL eines iBusses an (/&lt;Gruppen Name&gt;:&lt;iBus Name&gt;), dem Sie das Durchsuchen Ihrer Daten erlauben wollen. Sie k&#x00F6;nnen Ihre Datenquelle auch an mehrere iBusse anschlie&#x00DF;en.</span>		
 	</div>
 	<br />
 <!--

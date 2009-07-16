@@ -118,7 +118,7 @@ String dataSourceDescription = "";
 String iplugAdminGuiUrl = "";
 String iplugAdminGuiPort = "8082";
 String iplugAdminGuiPassword = "";
-String proxyServiceUrl = "/kug-group:<eindeutiger IPlug Name>";
+String proxyServiceUrl = "/ingrid-group:iplug-sns-<eindeutiger IPlug Name>";
 String error = "";
 
 BeanFactory beanFactory = (BeanFactory) application.getAttribute("beanFactory");
@@ -140,7 +140,7 @@ if (submitted) {
 	iplugAdminGuiUrl = WebUtil.getParameter(request, "iplugAdminGuiUrl", "");
 	iplugAdminGuiPort = WebUtil.getParameter(request, "iplugAdminGuiPort", "8082");
 	iplugAdminGuiPassword = WebUtil.getParameter(request, "iplugAdminGuiPassword", "");
-	proxyServiceUrl = WebUtil.getParameter(request, "proxyServiceUrl", "/kug-group:<eindeutiger IPlug Name>");
+	proxyServiceUrl = WebUtil.getParameter(request, "proxyServiceUrl", "/ingrid-group:iplug-sns-<eindeutiger IPlug Name>");
 	error = WebUtil.getParameter(request, "error", "");
 } else if (!submitted && description.getOrganisation() != null) {
 	// we load an existing plugdescription
