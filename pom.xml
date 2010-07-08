@@ -126,6 +126,18 @@
       </exclusions>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+   	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-war-plugin</artifactId>
+		<configuration>
+<!-- DO NOT ADD WEBAPP CLASSES in jar ! instead keep class files under classes ! jars are ignored when copied into iPlug !!!! then classes are missing in iPlug admin GUI ! -->
+			<archiveClasses>false</archiveClasses>
+		</configuration>
+	  </plugin>      
+    </plugins>
+  </build>
   <repositories>
     <repository>
       <id>de.ingrid.m2</id>
