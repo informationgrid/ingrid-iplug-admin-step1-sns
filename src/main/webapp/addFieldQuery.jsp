@@ -116,7 +116,7 @@ if (request.getParameter("add") != null) {
                         <input type="button" name="cancel" value="Abbrechen" onclick="window.location.href='<%=response.encodeURL("../step1/index.jsp")%>'"/>                       
                     </td>
                     <td>
-                        <input type="button" name="save" value="Weiter" onclick="window.location.href='<%=response.encodeURL("../step1/save.jsp")%>'"/>  
+                        <input type="button" name="save" value="Weiter" onclick="window.location.href='<%=response.encodeURL("../step1/addWebServiceData.jsp")%>'"/>  
                     </td>
                 </tr>
         </table>
@@ -223,7 +223,7 @@ if (request.getParameter("add") != null) {
                         <input type="button" name="cancel" value="Abbrechen" onclick="window.location.href='<%=response.encodeURL("../step1/index.jsp")%>'"/>                       
                     </td>
                     <td>
-                        <input type="button" name="save" value="Weiter" onclick="window.location.href='<%=response.encodeURL("../step1/save.jsp")%>'"/>  
+                        <input type="button" name="save" value="Weiter" onclick="window.location.href='<%=response.encodeURL("../step1/addWebServiceData.jsp")%>'"/>  
                     </td>
                 </tr>
         </table>
