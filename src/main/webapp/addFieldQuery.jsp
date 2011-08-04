@@ -23,6 +23,12 @@ String value = WebUtil.getParameter(request, "value", "");
 value.trim();
 String option = request.getParameter("option");
 
+String action = WebUtil.getParameter(request, "action", "");
+
+if (action.equals("forward")) {
+    response.sendRedirect(response.encodeRedirectURL("addWebServiceData.jsp"));
+}
+
 String error = "";
 if (request.getParameter("add") != null) {
     if (regex.isEmpty()) error += "Bitte geben Sie einen Regex an.<br />";
@@ -116,7 +122,9 @@ if (request.getParameter("add") != null) {
                         <input type="button" name="cancel" value="Abbrechen" onclick="window.location.href='<%=response.encodeURL("../step1/index.jsp")%>'"/>                       
                     </td>
                     <td>
-                        <input type="button" name="save" value="Weiter" onclick="window.location.href='<%=response.encodeURL("../step1/addWebServiceData.jsp")%>'"/>  
+                        <!--<input type="button" name="save" value="Weiter" onclick="window.location.href='<%=response.encodeURL("../step1/addWebServiceData.jsp")%>'"/>  -->
+                        <input type="submit" value="Weiter" name="cont"/>
+						<input type="hidden" name="action" value="forward" />
                     </td>
                 </tr>
         </table>
@@ -223,7 +231,9 @@ if (request.getParameter("add") != null) {
                         <input type="button" name="cancel" value="Abbrechen" onclick="window.location.href='<%=response.encodeURL("../step1/index.jsp")%>'"/>                       
                     </td>
                     <td>
-                        <input type="button" name="save" value="Weiter" onclick="window.location.href='<%=response.encodeURL("../step1/addWebServiceData.jsp")%>'"/>  
+                        <!--<input type="button" name="save" value="Weiter" onclick="window.location.href='<%=response.encodeURL("../step1/addWebServiceData.jsp")%>'"/>  -->
+                        <input type="submit" value="Weiter" name="cont"/>
+						<input type="hidden" name="action" value="forward" />
                     </td>
                 </tr>
         </table>
