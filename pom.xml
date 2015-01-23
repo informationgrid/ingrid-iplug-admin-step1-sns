@@ -2,17 +2,17 @@
   <parent>
     <artifactId>ingrid-base-pom</artifactId>
     <groupId>de.ingrid</groupId>
-    <version>3.0.0</version>
+    <version>3.5.0-SNAPSHOT-R304</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.ingrid</groupId>
   <artifactId>ingrid-iplug-admin-step1-sns</artifactId>
   <packaging>war</packaging>
-  <version>3.2.0-SNAPSHOT</version>
+  <version>3.5.0-SNAPSHOT</version>
   <name>ingrid-iplug-admin-step1-sns</name>
   <scm>
-    <connection>scm:svn:https://harrison.its-technidata.de:444/svn/ingrid/ingrid-iplug-admin-step1-sns/trunk</connection>
-    <developerConnection>scm:svn:https://harrison.its-technidata.de:444/svn/ingrid/ingrid-iplug-admin-step1-sns/trunk</developerConnection>
+    <connection>scm:git:git@github.com:informationgrid/ingrid-iplug-admin-step1-sns.git</connection>
+    <developerConnection>scm:git:git@github.com:informationgrid/ingrid-iplug-admin-step1-sns.git</developerConnection>
   </scm>
   <dependencies>
     <dependency>
@@ -135,7 +135,7 @@
 <!-- DO NOT ADD WEBAPP CLASSES in jar ! instead keep class files under classes ! jars are ignored when copied into iPlug !!!! then classes are missing in iPlug admin GUI ! -->
 			<archiveClasses>false</archiveClasses>
 		</configuration>
-	  </plugin>      
+	  </plugin>
     </plugins>
   </build>
   <repositories>
@@ -143,7 +143,7 @@
 		<repository>
           <id>de.ingrid.all</id>
           <name>Maven Repo InGrid</name>
-          <url>http://harrison.its-technidata.de/archiva/repository/ingrid-all</url>
+          <url>https://dev.informationgrid.eu/archiva/repository/ingrid-all</url>
         </repository>
   </repositories>
 </project>
