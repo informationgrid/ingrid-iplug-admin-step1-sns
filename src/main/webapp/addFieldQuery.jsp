@@ -48,7 +48,7 @@ String option = request.getParameter("option");
 String action = WebUtil.getParameter(request, "action", "");
 
 if (action.equals("forward")) {
-    response.sendRedirect(response.encodeRedirectURL("addWebServiceData.jsp"));
+    response.sendRedirect(response.encodeRedirectURL("save.jsp"));
 }
 
 String error = "";
