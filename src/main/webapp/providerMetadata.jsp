@@ -20,6 +20,7 @@
   limitations under the Licence.
   **************************************************#
   --%>
+<%@page import="org.springframework.security.crypto.bcrypt.BCrypt"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ page import="de.ingrid.iplug.util.*" %>
@@ -140,6 +141,7 @@ String dataSourceDescription = "";
 String iplugAdminGuiUrl = "";
 String iplugAdminGuiPort = "8082";
 String iplugAdminGuiPassword = "";
+String iplugAdminGuiPasswordOrig = "";
 String proxyServiceUrl = "/ingrid-group:iplug-sns-<eindeutiger IPlug Name>";
 String error = "";
 
@@ -162,6 +164,7 @@ if (submitted) {
 	iplugAdminGuiUrl = WebUtil.getParameter(request, "iplugAdminGuiUrl", "");
 	iplugAdminGuiPort = WebUtil.getParameter(request, "iplugAdminGuiPort", "8082");
 	iplugAdminGuiPassword = WebUtil.getParameter(request, "iplugAdminGuiPassword", "");
+	iplugAdminGuiPasswordOrig = description.getIplugAdminPassword();
 	proxyServiceUrl = WebUtil.getParameter(request, "proxyServiceUrl", "/ingrid-group:iplug-sns-<eindeutiger IPlug Name>");
 	error = WebUtil.getParameter(request, "error", "");
 } else if (!submitted && description.getOrganisation() != null) {
@@ -177,15 +180,16 @@ if (submitted) {
 	dataSourceDescription = description.getDataSourceDescription();
 	iplugAdminGuiUrl = description.getIplugAdminGuiUrl();
 	iplugAdminGuiPort = String.valueOf(description.getIplugAdminGuiPort());
-	iplugAdminGuiPassword = description.getIplugAdminPassword();
+	iplugAdminGuiPasswordOrig = description.getIplugAdminPassword();
 	proxyServiceUrl = description.getProxyServiceURL();
 	error = WebUtil.getParameter(request, "error", "");
 }
 
+// will only be called after a submit, which contains request parameters!
 if (!WebUtil.getParameter(request, "organisationAbbr", "").equals("")
 		&& !WebUtil.getParameter(request, "personSureName", "").equals("") && !WebUtil.getParameter(request, "personName", "").equals("")
 		&& !WebUtil.getParameter(request, "personPhone", "").equals("") && !WebUtil.getParameter(request, "personMail", "").equals("")
-		&& !WebUtil.getParameter(request, "iplugAdminGuiPassword", "").equals("") && !WebUtil.getParameter(request, "iplugAdminGuiPort", "").equals("")
+		&& !((iplugAdminGuiPasswordOrig == null || iplugAdminGuiPasswordOrig.equals("")) && WebUtil.getParameter(request, "iplugAdminGuiPassword", "").equals("")) && !WebUtil.getParameter(request, "iplugAdminGuiPort", "").equals("")
 		&& !WebUtil.getParameter(request, "dataSourceName", "").equals("") && !WebUtil.getParameter(request, "proxyServiceUrl", "").equals("")
 		&& !WebUtil.getParameter(request, "iplugAdminGuiUrl", "").equals("") 
 		&& WebUtil.getParameter(request, "iplugAdminGuiPort", "").matches("^\\p{Digit}{1,5}$")
@@ -218,7 +222,9 @@ if (!WebUtil.getParameter(request, "organisationAbbr", "").equals("")
 	
 	description.setIPlugClass("de.ingrid.iplug.sns.SnsPlug");
 	description.setIplugAdminGuiUrl(iplugAdminGuiUrl);
-	description.setIplugAdminPassword(iplugAdminGuiPassword.trim());
+	if (!iplugAdminGuiPassword.trim().isEmpty()) {
+	    description.setIplugAdminPassword(BCrypt.hashpw( iplugAdminGuiPassword.trim(), BCrypt.gensalt() ));
+	}
 	description.setIplugAdminGuiPort(Integer.parseInt(iplugAdminGuiPort));
 	
 	description.addField("lang");
