@@ -35,6 +35,7 @@
 <%@ page import="de.ingrid.utils.queryparser.*" %>
 <%@ page import="de.ingrid.utils.*" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Properties" %>
@@ -55,7 +56,7 @@ public void savePortalProviders(final BusClient busClient) {
 		IngridQuery ingridQuery = QueryStringParser.parse(query);
     	IngridHits hits = bus.search(ingridQuery, 1000, 0, 0, 120000);
     	IngridHit hit = hits.getHits()[0];
-    	ArrayList providers = hit.getArrayList("provider");
+    	List providers = hit.getArrayList("provider");
     
     	Properties p = new Properties();
     	for (Iterator iter = providers.iterator(); iter.hasNext();) {
