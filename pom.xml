@@ -8,14 +8,13 @@
   <groupId>de.ingrid</groupId>
   <artifactId>ingrid-iplug-admin-step1-sns</artifactId>
   <packaging>war</packaging>
-  <version>3.6.1</version>
+  <version>3.6.1.1</version>
   <name>ingrid-iplug-admin-step1-sns</name>
   <scm>
     <connection>scm:git:git@github.com:informationgrid/ingrid-iplug-admin-step1-sns.git</connection>
     <developerConnection>scm:git:git@github.com:informationgrid/ingrid-iplug-admin-step1-sns.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
-  
   <dependencies>
     <dependency>
       <groupId>de.ingrid</groupId>
@@ -131,22 +130,31 @@
   </dependencies>
   <build>
     <plugins>
-   	  <plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-war-plugin</artifactId>
-		<configuration>
-<!-- DO NOT ADD WEBAPP CLASSES in jar ! instead keep class files under classes ! jars are ignored when copied into iPlug !!!! then classes are missing in iPlug admin GUI ! -->
-			<archiveClasses>false</archiveClasses>
-		</configuration>
-	  </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <!-- DO NOT ADD WEBAPP CLASSES in jar ! instead keep class files under classes ! jars are ignored when copied into iPlug !!!! then classes are missing in iPlug admin GUI ! -->
+          <archiveClasses>false</archiveClasses>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>external.atlassian.jgitflow</groupId>
+        <artifactId>jgitflow-maven-plugin</artifactId>
+        <version>1.0-m5.1</version>
+        <configuration>
+          <defaultOriginUrl>https://github.com/informationgrid/ingrid-iplug-admin-step1-sns</defaultOriginUrl>
+          <noDeploy>true</noDeploy>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <repositories>
-		<!-- Repo of parent pom needed, parent pom may not be installed locally yet -->
-		<repository>
-          <id>de.ingrid.all</id>
-          <name>Maven Repo InGrid</name>
-          <url>https://dev.informationgrid.eu/archiva/repository/ingrid-all</url>
-        </repository>
+    <!-- Repo of parent pom needed, parent pom may not be installed locally yet -->
+    <repository>
+      <id>de.ingrid.all</id>
+      <name>Maven Repo InGrid</name>
+      <url>https://dev.informationgrid.eu/archiva/repository/ingrid-all</url>
+    </repository>
   </repositories>
 </project>
